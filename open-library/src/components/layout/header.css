@@ -1,0 +1,29 @@
+.nav-link{
+    color:antiquewhite;
+}
+
+.nav-link:hover{
+    color:lightgreen;
+}
+
+.nav-link:focus{
+    color:lightgreen;
+}
+
+#log{
+    color: mediumblue;
+}
+
+#reg{
+    color: mediumblue;
+}
+
+#log:hover{
+    color:crimson;
+}
+
+#reg:hover{
+    color:crimson;
+}
+
+
