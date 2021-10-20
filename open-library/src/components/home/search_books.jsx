@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Search_Books extends React.Component{
+export default class SearchBooks extends React.Component{
     render() {
         return(
             <div className="py-2">
@@ -19,14 +19,14 @@ export default class Search_Books extends React.Component{
                         </div>
                         <div className="col-2">
                             <select className="form-select" aria-label="Default select example">
-                                <option selected>Search by Genre</option>
+                                <option selected>Search by Category</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
                         </div>
                         <div className="col-1">
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary">Search</button>
                         </div>
                     </div>
                 </form>

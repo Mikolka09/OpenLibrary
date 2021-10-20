@@ -15,12 +15,11 @@ export default class Header extends React.Component {
                         </div>
                         <div className="col-6 navbar-expand justify-content-center my-auto">
                             <nav className="nav nav-pills nav-fill fw-bolder fs-5">
-                                <Link className="nav-link" to="#">Home</Link>
-                                <Link className="nav-link" to="#">Books</Link>
-                                <Link className="nav-link" to="#">DashBoard</Link>
-                                <Link className="nav-link" to="#">Contact</Link>
+                                <Link className="nav-link" to="/">Home</Link>
+                                <Link className="nav-link" to="/books">Books</Link>
+                                <Link className="nav-link" to="/dashboard">DashBoard</Link>
+                                <Link className="nav-link" to="/contact">Contact</Link>
                             </nav>
-
                         </div>
                         <div className="col-4 navbar-expand my-auto ">
                             <nav className="nav fw-bold justify-content-end fs-6">
