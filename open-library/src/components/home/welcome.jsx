@@ -20,7 +20,7 @@ export default class Welcome extends React.Component {
                         cursus justo magnis fermentum.</p>
                 </div>
                 <div className="col-6">
-                    <img src={ImgBook} alt="Books" class="img-responsive"/>
+                    <img src={ImgBook} alt="Books" className="img-fluid"/>
                 </div>
             </div>
         )

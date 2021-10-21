@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "./heading";
-import HomeCss from "./home_container.css";
+import HomeCss from "./css/home_container.css";
 import SearchBooks from "./search_books";
 import Welcome from "./welcome";
 

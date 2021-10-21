@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import logo from "./img/logo.png"
-import ColorLink from "./header.css"
+import ColorLink from "./css/header.css"
 
 export default class Header extends React.Component {
     render() {
@@ -17,6 +17,7 @@ export default class Header extends React.Component {
                             <nav className="nav nav-pills nav-fill fw-bolder fs-5">
                                 <Link className="nav-link" to="/">Home</Link>
                                 <Link className="nav-link" to="/books">Books</Link>
+                                <Link className="nav-link" to="/topbooks">TopBooks</Link>
                                 <Link className="nav-link" to="/dashboard">DashBoard</Link>
                                 <Link className="nav-link" to="/contact">Contact</Link>
                             </nav>
