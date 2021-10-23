@@ -1,0 +1,14 @@
+#title_book{
+    color:black;
+    text-decoration: none;
+}
+
+#title_book:hover{
+    color:coral;
+}
+
+
+#block_book{
+    width: 28.4%;
+    margin: 0;
+}
