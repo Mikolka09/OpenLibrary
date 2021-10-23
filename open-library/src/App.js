@@ -5,6 +5,7 @@ import HomeContainer from "./components/home/home_container";
 import {Route, Switch} from "react-router-dom";
 import BooksContainer from "./components/books/books_container";
 import TopBooksContainer from "./components/topbooks/topbooks_container";
+import Error404 from "./components/error/error404";
 
 function App() {
     return (
@@ -21,7 +22,9 @@ function App() {
                     <Route path="/top">
                         <TopBooksContainer/>
                     </Route>
-
+                    <Route path="*">
+                        <Error404/>
+                    </Route>
                 </Switch>
             </main>
             <Footer/>
