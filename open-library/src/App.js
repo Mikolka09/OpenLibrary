@@ -6,6 +6,8 @@ import {Route, Switch} from "react-router-dom";
 import BooksContainer from "./components/books/books_container";
 import TopBooksContainer from "./components/topbooks/topbooks_container";
 import Error404 from "./components/error/error404";
+import DashboardContainer from "./components/dashboard/dashboard_container";
+import ContactContainer from "./components/contact/contact_container";
 
 function App() {
     return (
@@ -21,6 +23,12 @@ function App() {
                     </Route>
                     <Route path="/top">
                         <TopBooksContainer/>
+                    </Route>
+                    <Route path="/dashboard">
+                        <DashboardContainer/>
+                    </Route>
+                    <Route path="/contact">
+                        <ContactContainer/>
                     </Route>
                     <Route path="*">
                         <Error404/>

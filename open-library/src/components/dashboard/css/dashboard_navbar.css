@@ -1,0 +1,11 @@
+#nav_bar{
+    background-color: blanchedalmond;
+}
+
+#navbar_link{
+    color: black;
+}
+
+#navbar_link:hover{
+    color: cornflowerblue;
+}
