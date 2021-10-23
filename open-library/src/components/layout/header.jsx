@@ -17,7 +17,7 @@ export default class Header extends React.Component {
                             <nav className="nav nav-pills nav-fill fw-bolder fs-5">
                                 <Link className="nav-link" to="/">Home</Link>
                                 <Link className="nav-link" to="/books">Books</Link>
-                                <Link className="nav-link" to="/topbooks">TopBooks</Link>
+                                <Link className="nav-link" to="/top">TopBooks</Link>
                                 <Link className="nav-link" to="/dashboard">DashBoard</Link>
                                 <Link className="nav-link" to="/contact">Contact</Link>
                             </nav>

@@ -16,7 +16,7 @@ export default class SortBooks extends React.Component {
                         </div>
                         <div className="col-2">
                             <select className="form-select" defaultValue={'DEFAULT'}>
-                                <option value="DEFAULT" disabled>Search by Category</option>
+                                <option value="DEFAULT" disabled>Sort by Category</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>

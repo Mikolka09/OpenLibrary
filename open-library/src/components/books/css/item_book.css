@@ -12,3 +12,7 @@
     width: 28.4%;
     margin: 0;
 }
+
+#img_book:hover{
+    opacity: 75%;
+}

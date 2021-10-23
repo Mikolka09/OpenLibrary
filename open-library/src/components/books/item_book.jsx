@@ -10,7 +10,7 @@ export default class ItemBook extends React.Component {
         return (
             <div id="block_book" className="col-4 mb-4">
                 <div className="container-fluid text-start border border-4 p-0">
-                    <Link to="#"><img className="img-fluid" src={Img} alt="Img"/></Link>
+                    <Link to="#"><img id="img_book" className="img-fluid" src={Img} alt="Img"/></Link>
                     <div className="text-start bg-white pb-1 ps-2">
                         <div className="row">
                             <div className="col">
