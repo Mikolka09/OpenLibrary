@@ -12,7 +12,8 @@ const Book = new Schema({
     fileUrl: String,
     rating: String,
     isbn: String,
-    likes: String
+    likes: String,
+    idUser: String
 });
 
 module.exports = mongoose.model("Book", Book);

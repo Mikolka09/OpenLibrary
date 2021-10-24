@@ -3,6 +3,7 @@ import {Route, Switch} from "react-router-dom";
 import ListMyBooks from "./list_mybooks";
 import ImgDash from "./img/2017-11-MyDashboard.svg";
 import "./css/dashboard_main.css";
+import CreateMyBook from "./create_mybook";
 
 export default class DashBoardMain extends React.Component{
     render() {
@@ -16,6 +17,15 @@ export default class DashBoardMain extends React.Component{
                     </Route>
                     <Route path="/dashboard/list">
                         <ListMyBooks/>
+                    </Route>
+                    <Route path="/dashboard/create">
+                        <CreateMyBook/>
+                    </Route>
+                    <Route path="/dashboard/userDetails">
+
+                    </Route>
+                    <Route path="/dashboard/userDelete">
+
                     </Route>
                 </Switch>
             </main>
