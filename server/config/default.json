@@ -1,0 +1,5 @@
+{
+  "serverPort": 5000,
+  "dbUrl": "mongodb+srv://Mikolka:Mikolka3275@cluster0.tuurm.mongodb.net/OpenLibrary?retryWrites=true&w=majority",
+  "secretKey": "my-secret-key"
+}
