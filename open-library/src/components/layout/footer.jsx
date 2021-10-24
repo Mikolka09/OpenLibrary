@@ -4,7 +4,7 @@ import Face from "./img/facebook.png";
 import Twit from "./img/twitter.png";
 import Lin from "./img/linkedin.png";
 import Vk from "./img/vkontakte.png";
-import FootCss from "./css/footer.css";
+import "./css/footer.css";
 
 export default class Footer extends React.Component{
     render(){

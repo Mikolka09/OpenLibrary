@@ -1,7 +1,7 @@
 import React from "react";
 import DashBoardNavBar from "./dashboard_navbar";
 import DashBoardMain from "./dashboard_main";
-import DashCss from "./css/dashboard_container.css"
+import "./css/dashboard_container.css"
 
 export default class DashboardContainer extends React.Component {
     render() {

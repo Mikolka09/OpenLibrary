@@ -3,7 +3,7 @@ import Img from "./img/o2ltt5qf_snb.jpg"
 import Like from "./img/heart.png"
 import Down from "./img/cloud-computing.png"
 import {Link} from "react-router-dom";
-import ItemCss from "./css/item_book.css"
+import "./css/item_book.css"
 
 export default class ItemBook extends React.Component {
     render() {

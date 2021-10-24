@@ -1,5 +1,5 @@
 import React from "react";
-import FormCss from "./css/form_contact.css";
+import "./css/form_contact.css";
 
 export default class FormContact extends React.Component {
     render() {

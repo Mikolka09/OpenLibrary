@@ -1,5 +1,5 @@
 import React from "react";
-import TopBooksCss from "./css/topbooks_container.css";
+import "./css/topbooks_container.css";
 import HeadingTopBooks from "./heading_topbooks";
 import Top10AllCategories from "./top10_allCategories";
 import Top10Category from "./top10_Category";

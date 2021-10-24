@@ -1,5 +1,5 @@
 import React from "react";
-import ContCss from "./css/contact_container.css"
+import "./css/contact_container.css"
 import HeadingContact from "./heading_contact";
 import MapContact from "./map_contact";
 import FormContact from "./form_contact";

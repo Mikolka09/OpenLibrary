@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import logo from "./img/logo.png"
-import ColorLink from "./css/header.css"
+import "./css/header.css"
 
 export default class Header extends React.Component {
     render() {

@@ -1,12 +1,13 @@
 import React from "react";
 import Img from "./img/o2ltt5qf_snb.jpg";
-import "./css/top10_allCategories.css";
+import "./css/list_mybooks.css";
+import {Link} from "react-router-dom";
 
-export default class Top10AllCategories extends React.Component {
+export default class ListMyBooks extends React.Component {
     render() {
         return (
             <div className="container">
-                <div><h3><u>Top 10 books of all Categories</u></h3></div>
+                <div><h3><u>LIST MY BOOKS</u></h3></div>
                 <div>
                     <table className="table table-success table-striped table-hover">
                         <thead>
@@ -20,10 +21,11 @@ export default class Top10AllCategories extends React.Component {
                             <th scope="col">ISBN</th>
                             <th scope="col">Likes</th>
                             <th scope="col">Rating</th>
+                            <th scope="col">Buttons</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr className="click_tr" onClick={()=>{alert("Cool!");}}>
+                        <tr>
                             <th scope="row">1</th>
                             <td><img src={Img} alt="Img" width="50px"/></td>
                             <td>Otto Motto</td>
@@ -33,8 +35,13 @@ export default class Top10AllCategories extends React.Component {
                             <td>123456789</td>
                             <td>10</td>
                             <td>9</td>
+                            <td>
+                                <Link to="#" className="btn btn-success btn-sm">Edit</Link>
+                                <Link to="#" className="btn btn-primary btn-sm mx-1">Details</Link>
+                                <Link to="#" className="btn btn-danger btn-sm">Delete</Link>
+                            </td>
                         </tr>
-                        <tr className="click_tr" onClick={()=>{alert("Cool!");}}>
+                        <tr>
                             <th scope="row">2</th>
                             <td><img src={Img} alt="Img" width="50px"/></td>
                             <td>Otto Motto</td>
@@ -44,6 +51,11 @@ export default class Top10AllCategories extends React.Component {
                             <td>123456789</td>
                             <td>10</td>
                             <td>9</td>
+                            <td>
+                                <Link to="#" className="btn btn-success btn-sm">Edit</Link>
+                                <Link to="#" className="btn btn-primary btn-sm mx-1">Details</Link>
+                                <Link to="#" className="btn btn-danger btn-sm">Delete</Link>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
