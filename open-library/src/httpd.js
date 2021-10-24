@@ -24,7 +24,7 @@ app.use(router);
 
 
 // Настройка соединения с базой
-const mongoUri = "mongodb+srv://pv911User:User70074524@nodecluster.whann.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoUri = "mongodb+srv://Mikolka:Mikolka3275@cluster0.tuurm.mongodb.net/OpenLibrary?retryWrites=true&w=majority";
 const mongoose = require("mongoose");
 
 mongoose.connect( // Соединиться с базой
