@@ -24,8 +24,8 @@ export default class Header extends React.Component {
                         </div>
                         <div className="col-4 navbar-expand my-auto ">
                             <nav className="nav fw-bold justify-content-end fs-6">
-                                <Link className="nav-link" id="reg" to="#">Register</Link>
-                                <Link className="nav-link" id="log" to="#">Login</Link>
+                                <Link className="nav-link" id="reg" to="/register">Register</Link>
+                                <Link className="nav-link" id="log" to="/login">Login</Link>
                             </nav>
                         </div>
                     </div>

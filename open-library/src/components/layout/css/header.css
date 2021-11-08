@@ -11,11 +11,11 @@
 }
 
 #log{
-    color: mediumblue;
+    color: black;
 }
 
 #reg{
-    color: mediumblue;
+    color: black;
 }
 
 #log:hover{
@@ -25,5 +25,14 @@
 #reg:hover{
     color:crimson;
 }
+
+#log:focus{
+    color:crimson;
+}
+
+#reg:focus{
+    color:crimson;
+}
+
 
 

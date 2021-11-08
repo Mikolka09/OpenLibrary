@@ -8,6 +8,7 @@ import TopBooksContainer from "./components/topbooks/topbooks_container";
 import Error404 from "./components/error/error404";
 import DashboardContainer from "./components/dashboard/dashboard_container";
 import ContactContainer from "./components/contact/contact_container";
+import AuthContainer from "./components/auth/auth_container";
 
 function App() {
     return (
@@ -29,6 +30,9 @@ function App() {
                     </Route>
                     <Route path="/contact">
                         <ContactContainer/>
+                    </Route>
+                    <Route path={["/register", "/login"]}>
+                        <AuthContainer/>
                     </Route>
                     <Route path="*">
                         <Error404/>
