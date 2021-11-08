@@ -22,6 +22,13 @@
 #cont_reg{
     background-image: url('https://mdbootstrap.com/img/Photos/new-templates/search-box/img4.jpg');
 }
+
 #card_reg{
     border-radius: 15px;
 }
+
+#card_pad{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+

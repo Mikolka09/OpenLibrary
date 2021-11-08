@@ -1,5 +1,4 @@
 import React from "react";
-import "./css/auth_container.css";
 import {Route, Switch} from "react-router-dom";
 import AuthRegister from "./auth_register";
 import AuthLogin from "./auth_login";

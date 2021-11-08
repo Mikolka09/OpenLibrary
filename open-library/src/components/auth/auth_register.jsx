@@ -9,7 +9,7 @@ export default class AuthRegister extends React.Component {
                 <div className="mask d-flex align-items-center gradient-custom-3">
                     <div className="container">
                         <div className="row d-flex justify-content-center align-items-center h-100">
-                            <div className="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div className="col-12 col-md-9 col-lg-7 col-xl-6" id="card_pad">
                                 <div className="card" id="card_reg">
                                     <div className="card-body p-5">
                                         <h2 className="text-uppercase text-center mb-4">Create an account</h2>
