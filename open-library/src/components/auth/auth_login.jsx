@@ -15,14 +15,14 @@ export default class AuthLogin extends React.Component {
                                         <h2 className="text-uppercase text-center mb-4">Sign In</h2>
                                         <form className="fw-bold">
                                             <div className="form-outline mb-3">
-                                                <label className="form-label" htmlFor="reg_email">Your
+                                                <label className="form-label" htmlFor="log_email">Your
                                                     Email</label>
-                                                <input type="email" id="reg_email" placeholder="ivanov@mail.com"
+                                                <input type="email" id="log_email" placeholder="ivanov@mail.com"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="form-outline mb-3">
-                                                <label className="form-label" htmlFor="reg_pass">Password</label>
-                                                <input type="password" id="reg_pass" placeholder="_A123456"
+                                                <label className="form-label" htmlFor="log_pass">Password</label>
+                                                <input type="password" id="log_pass" placeholder="_A123456"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="form-check d-flex justify-content-start mb-3">
@@ -36,7 +36,7 @@ export default class AuthLogin extends React.Component {
                                                     Remember me</label>
                                             </div>
                                             <div className="d-grid gap-2">
-                                                <button type="button" id="btn_register"
+                                                <button type="button" id="btn_login"
                                                         className="btn btn-success btn-block btn-lg gradient-custom-4 fw-bold text-body">Login
                                                 </button>
                                             </div>

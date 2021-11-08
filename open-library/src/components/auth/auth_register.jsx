@@ -17,13 +17,13 @@ export default class AuthRegister extends React.Component {
                                             <div className="form-outline mb-3">
                                                 <label className="form-label" htmlFor="reg_name">Your
                                                     Name</label>
-                                                <input type="text" id="reg_name" placeholder="User Name"
+                                                <input  type="text" id="reg_name" placeholder="User Name"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="form-outline mb-3">
                                                 <label className="form-label" htmlFor="reg_email">Your
                                                     Email</label>
-                                                <input type="email" id="reg_email" placeholder="ivanov@mail.com"
+                                                <input  type="email" id="reg_email" placeholder="ivanov@mail.com"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="form-outline mb-3">
