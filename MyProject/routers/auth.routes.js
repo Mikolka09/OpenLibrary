@@ -4,13 +4,14 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const {check, validationResult} = require("express-validator");
 const config = require("config");
+const Role = require("../models/role");
 const router = new Router();
 
-router.post("/registration",
+router.post("/register",
     [
         check('email', "Uncorrect email").isEmail(),
         check('password', "Password must be longer 3 and shorter than 12").isLength({min: 3, max: 12}),
-        check('username', "The UserName must not be empty").isEmpty()
+        check('username', "The UserName must not be empty").exists().not().isEmpty()
     ],
     async (req, res) => {
         try {
@@ -24,7 +25,8 @@ router.post("/registration",
                 return res.status(400).json({message: `User with email ${email} already exist!`});
             }
             const hashPassword = bcrypt.hashSync(password, 7);
-            const user = new User({username, email, password: hashPassword});
+            const userRole = await Role.findOne({value:"USER"});
+            const user = new User({username, email, password: hashPassword, roles: [userRole.value]});
             await user.save();
             return res.json({message: "User was created!"});
         } catch (e) {
@@ -32,6 +34,7 @@ router.post("/registration",
             return res.status(500).json({message: "Server error"});
         }
     })
+
 router.post("/login",async (req, res) => {
         try {
             const {email, password} = req.body;
@@ -43,6 +46,7 @@ router.post("/login",async (req, res) => {
             if(!isPassValid){
                 return res.status(400).json({message:"Invalid password!"});
             }
+
             const token = jwt.sign({id:user._id}, config.get("secretKey"), {expiresIn: "1h"});
             return res.json({
                 token,
@@ -50,7 +54,8 @@ router.post("/login",async (req, res) => {
                     id: user._id,
                     email: user.email,
                     username: user.username,
-                    avatar: user.avatar
+                    avatar: user.avatar,
+                    roles: user.roles
                 }
             })
         } catch (e) {

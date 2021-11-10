@@ -1,7 +1,6 @@
 import React from "react";
 import "./css/auth_register.css";
-import {Link} from "react-router-dom";
-import {useHttp} from "../../hooks/http.hook";
+import {Link, Redirect} from "react-router-dom";
 
 export default class AuthRegister extends React.Component {
 
@@ -9,27 +8,49 @@ export default class AuthRegister extends React.Component {
         super(props);
         this.state = {
             user: {
-                username: String,
-                email: String,
-                password: String,
-                avatar: String,
+                username: "",
+                email: "",
+                password: "",
                 roles: []
-            },
-            useH: {},
-            headers: {'Content-Type': 'application/json'},
-
+            }
         }
+        this.baseState = this.state;
     }
 
     async registerHandler() {
-        this.useH = useHttp();
-        try {
-            const data = await this.useH.request('https://localhost:5000/api/auth/register', 'POST',
-                this.user, this.state.headers);
-            console.log('Data', data)
-        } catch (e) {
-
+        console.log(this.state.user);
+        if (this.state.user.password === this.state.user.password_conf) {
+            fetch(
+                "http://localhost:5000/api/auth/register",
+                {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(this.state.user)
+                }
+            )
+                .then(response => {
+                    if (response.status !== 200) {
+                        console.log(response.status);
+                        console.log(response.statusText);
+                    }
+                    this.resetForm();
+                    return response.json();
+                })
+                .then(json => {
+                    console.log(json);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        } else {
+            alert("Password verification error!");
         }
+    }
+
+    resetForm() {
+        return (
+            <Redirect to="/home"/>
+        )
     }
 
     render() {
@@ -42,36 +63,36 @@ export default class AuthRegister extends React.Component {
                                 <div className="card" id="card_reg">
                                     <div className="card-body p-5">
                                         <h2 className="text-uppercase text-center mb-4">Create an account</h2>
-                                        <form className="fw-bold">
+                                        <form className="fw-bold" id="form_reg">
                                             <div className="form-outline mb-3">
                                                 <label className="form-label" htmlFor="reg_name">Your
                                                     Name</label>
                                                 <input onChange={this.onChange.bind(this)} type="text" id="reg_name"
-                                                       placeholder="User Name"
+                                                       name="username" placeholder="User Name"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="form-outline mb-3">
                                                 <label className="form-label" htmlFor="reg_email">Your
                                                     Email</label>
                                                 <input onChange={this.onChange.bind(this)} type="email" id="reg_email"
-                                                       placeholder="ivanov@mail.com"
+                                                       name="email" placeholder="ivanov@mail.com"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="form-outline mb-3">
                                                 <label className="form-label" htmlFor="reg_pass">Password</label>
                                                 <input onChange={this.onChange.bind(this)} type="password" id="reg_pass"
-                                                       placeholder="_A123456"
+                                                       name="password" placeholder="_A123456"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="form-outline mb-3">
                                                 <label className="form-label" htmlFor="reg_repeat">Repeat your
                                                     password</label>
                                                 <input onChange={this.onChange.bind(this)} type="password"
-                                                       id="reg_repeat" placeholder="_A123456"
+                                                       name="password_conf" id="reg_repeat" placeholder="_A123456"
                                                        className="form-control form-control-lg"/>
                                             </div>
                                             <div className="d-grid gap-2">
-                                                <button onClick={this.registerHandler}
+                                                <button onClick={this.registerHandler.bind(this)}
                                                         type="button" id="btn_register"
                                                         className="btn btn-success btn-block btn-lg gradient-custom-4 fw-bold text-body">Register
                                                 </button>
@@ -93,7 +114,7 @@ export default class AuthRegister extends React.Component {
 
     onChange(el) {
         const user = this.state.user;
-        user[el.target.name] = el.target.name;
+        user[el.target.name] = el.target.value;
         this.setState({user: user});
     }
 }
