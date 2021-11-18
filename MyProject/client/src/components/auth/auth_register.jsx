@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/auth_register.css";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default class AuthRegister extends React.Component {
 
@@ -14,7 +14,6 @@ export default class AuthRegister extends React.Component {
                 roles: []
             }
         }
-        this.baseState = this.state;
     }
 
     async registerHandler() {
@@ -33,7 +32,7 @@ export default class AuthRegister extends React.Component {
                         console.log(response.status);
                         console.log(response.statusText);
                     }
-                    this.resetForm();
+                    window.location.href = "/";
                     return response.json();
                 })
                 .then(json => {
@@ -45,12 +44,6 @@ export default class AuthRegister extends React.Component {
         } else {
             alert("Password verification error!");
         }
-    }
-
-    resetForm() {
-        return (
-            <Redirect to="/home"/>
-        )
     }
 
     render() {

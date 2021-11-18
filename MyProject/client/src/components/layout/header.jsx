@@ -4,6 +4,7 @@ import logo from "./img/logo.png"
 import "./css/header.css"
 
 export default class Header extends React.Component {
+
     render() {
         return (
             <header>
@@ -11,7 +12,7 @@ export default class Header extends React.Component {
                     <div className="row">
                         <div className="col-2">
                             <Link className="navbar-brand" to="/"><img src={logo} alt="Logo"
-                                                                                width="80px"/></Link>
+                                                                       width="80px"/></Link>
                         </div>
                         <div className="col-6 navbar-expand justify-content-center my-auto">
                             <nav className="nav nav-pills nav-fill fw-bolder fs-5">
