@@ -1,11 +1,11 @@
 import React from "react";
-import Heading from "./heading";
+import {Heading} from "./heading";
 import "./css/home_container.css";
-import SearchBooks from "./search_books";
-import Welcome from "./welcome";
+import {SearchBooks} from "./search_books";
+import {Welcome} from "./welcome";
 
-export default class HomeContainer extends React.Component {
-    render() {
+export const HomeContainer =()=> {
+
         return (
             <div className="container-fluid" id="cont_home">
                 <Heading/>
@@ -13,5 +13,5 @@ export default class HomeContainer extends React.Component {
                 <Welcome/>
             </div>
         )
-    }
+
 }

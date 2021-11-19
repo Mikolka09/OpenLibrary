@@ -1,10 +1,10 @@
 import React from "react";
 import {Route, Switch} from "react-router-dom";
-import AuthRegister from "./auth_register";
-import AuthLogin from "./auth_login";
+import {AuthRegister} from "./auth_register";
+import {AuthLogin} from "./auth_login";
 
-export default class AuthContainer extends React.Component {
-    render() {
+export const AuthContainer =() => {
+
         return (
             <div>
                <Switch>
@@ -17,5 +17,5 @@ export default class AuthContainer extends React.Component {
                </Switch>
             </div>
         )
-    }
+
 }

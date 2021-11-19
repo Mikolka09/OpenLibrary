@@ -17,7 +17,7 @@ router.post("/register",
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
-                return res.status(400).json({message: `Uncorrect request!`, errors});
+                return res.status(400).json({errors: errors.array(), message: `Uncorrect request!`});
             }
             const {username, email, password} = req.body;
             const candidate = await User.findOne({email});
@@ -35,8 +35,16 @@ router.post("/register",
         }
     })
 
-router.post("/login",async (req, res) => {
+router.post("/login",
+    [
+        check('email', "Uncorrect email").isEmail(),
+        check('password', "Password must be longer 3 and shorter than 12").isLength({min: 3, max: 12})
+    ],async (req, res) => {
         try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({errors: errors.array(), message: `Uncorrect request!`});
+            }
             const {email, password} = req.body;
             const user = await User.findOne({email});
             if(!user){
@@ -46,17 +54,9 @@ router.post("/login",async (req, res) => {
             if(!isPassValid){
                 return res.status(400).json({message:"Invalid password!"});
             }
-
-            const token = jwt.sign({id:user._id}, config.get("secretKey"), {expiresIn: "1h"});
+            const token = jwt.sign({userId:user._id}, config.get("secretKey"), {expiresIn: "1h"});
             return res.json({
-                token,
-                user:{
-                    id: user._id,
-                    email: user.email,
-                    username: user.username,
-                    avatar: user.avatar,
-                    roles: user.roles
-                }
+                token,user:{userId: user._id, roles: user.roles}
             })
         } catch (e) {
             console.log(e);
