@@ -4,7 +4,7 @@ import {DashboardContainer} from "./components/dashboard/dashboard_container";
 
 
 export const useRoutes = isAuthenticated => {
-    if (isAuthenticated) { return ( <DashboardContainer/> ) }
+    if (isAuthenticated) { return ( <DashboardContainer/>) }
 
     return ( <Redirect to="/login"/> )
 }

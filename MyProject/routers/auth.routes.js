@@ -28,10 +28,12 @@ router.post("/register",
             const userRole = await Role.findOne({value:"USER"});
             const user = new User({username, email, password: hashPassword, roles: [userRole.value]});
             await user.save();
-            return res.json({message: "User was created!"});
+            res.status(201).json({ message: 'User was created!' });
+            //  return res.json({message: "User was created!"});
         } catch (e) {
             console.log(e);
-            return res.status(500).json({message: "Server error"});
+            res.status(500).json({ message: 'Server error' });
+            //return res.status(500).json({message: "Server error"});
         }
     })
 
@@ -55,12 +57,11 @@ router.post("/login",
                 return res.status(400).json({message:"Invalid password!"});
             }
             const token = jwt.sign({userId:user._id}, config.get("secretKey"), {expiresIn: "1h"});
-            return res.json({
-                token,user:{userId: user._id, roles: user.roles}
-            })
+            res.json({
+                token, userId: user._id, email:email});
         } catch (e) {
             console.log(e);
-            return res.status(500).json({message: "Server error"});
+            res.status(500).json({message: "Server error"});
         }
     })
 

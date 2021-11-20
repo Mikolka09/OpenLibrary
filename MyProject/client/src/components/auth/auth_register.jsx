@@ -21,10 +21,15 @@ export const AuthRegister = () => {
     }
 
     const registerHandler = async () => {
-        try {
-            const data = request('/api/auth/register', "POST", {...form});
-            message(data.message);
-        } catch (e) {}
+        if (form.password === form.password_conf) {
+            try {
+                const data = await request('/api/auth/register', "POST", {...form});
+                message(data.message);
+            } catch (e) {
+            }
+        } else {
+            alert("Password Uncorrect!");
+        }
     }
 
     return (

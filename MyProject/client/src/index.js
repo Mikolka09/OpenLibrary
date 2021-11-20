@@ -7,16 +7,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {store} from "./reducers";
-import {Provider} from "react-redux";
+/*import {store} from "./reducers";
+import {Provider} from "react-redux";*/
 
 ReactDOM.render(
     <Router>
-        <Provider store={store}>
         <React.StrictMode>
             <App/>
         </React.StrictMode>
-        </Provider>
     </Router>,
     document.getElementById('root')
 );
