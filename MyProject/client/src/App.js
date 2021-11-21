@@ -14,13 +14,13 @@ import 'materialize-css'
 
 
 function App() {
-    const {token, logIn, logOut, userId, userEmail} = useAuth();
+    const {token, logIn, logOut, userId, userEmail, userRole} = useAuth();
     const isAuthenticated = !!token;
     const routes = useRoutes(isAuthenticated);
     return (
             <div className="App">
                 <AuthContext.Provider value={{
-                    token, logIn, logOut, userId, userEmail, isAuthenticated
+                    token, logIn, logOut, userId, userEmail, userRole, isAuthenticated
                 }}>
                 <Header/>
                 <main>

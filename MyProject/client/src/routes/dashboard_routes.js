@@ -1,10 +1,31 @@
 import React from "react";
-import {Redirect} from "react-router-dom";
-import {DashboardContainer} from "../components/dashboard/dashboard_container";
+import {Route, Switch} from "react-router-dom";
+import {ListUsers} from "../components/dashboard/list_users";
 
 
-export const useRoutes = isAuthenticated => {
-    if (isAuthenticated) { return ( <DashboardContainer/>) }
+export const dashboardRoutes = role => {
 
-    return ( <Redirect to="/login"/> )
+    if (role === "USER") {
+        return (
+            <Switch>
+                <Route path="/dashboard/userDetails">
+
+                </Route>
+                <Route path="/dashboard/userDelete">
+
+                </Route>
+            </Switch>
+        )
+    }
+
+    return (
+        <Switch>
+            <Route path="/dashboard/usersAll">
+                <ListUsers/>
+            </Route>
+            <Route path="/dashboard/booksAll">
+
+            </Route>
+        </Switch>
+    )
 }

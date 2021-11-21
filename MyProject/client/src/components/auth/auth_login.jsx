@@ -27,7 +27,7 @@ export const AuthLogin = () => {
     const loginHandler = async () => {
         try {
             const data = await request('/api/auth/login', "POST", {...form});
-            auth.logIn(data.token, data.userId, data.email);
+            auth.logIn(data.token, data.userId, data.email, data.role);
             history.push("/");
         } catch (e) {
         }

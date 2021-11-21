@@ -25,14 +25,14 @@ router.post("/register",
                 return res.status(400).json({message: `User with email ${email} already exist!`});
             }
             const hashPassword = bcrypt.hashSync(password, 7);
-            const userRole = await Role.findOne({value:"USER"});
+            const userRole = await Role.findOne({value: "USER"});
             const user = new User({username, email, password: hashPassword, roles: [userRole.value]});
             await user.save();
-            res.status(201).json({ message: 'User was created!' });
+            res.status(201).json({message: 'User was created!'});
             //  return res.json({message: "User was created!"});
         } catch (e) {
             console.log(e);
-            res.status(500).json({ message: 'Server error' });
+            res.status(500).json({message: 'Server error'});
             //return res.status(500).json({message: "Server error"});
         }
     })
@@ -41,7 +41,7 @@ router.post("/login",
     [
         check('email', "Uncorrect email").isEmail(),
         check('password', "Password must be longer 3 and shorter than 12").isLength({min: 3, max: 12})
-    ],async (req, res) => {
+    ], async (req, res) => {
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
@@ -49,16 +49,18 @@ router.post("/login",
             }
             const {email, password} = req.body;
             const user = await User.findOne({email});
-            if(!user){
-                return res.status(404).json({message:"User not found!"});
+            const role = user.roles[0];
+            if (!user) {
+                return res.status(404).json({message: "User not found!"});
             }
             const isPassValid = bcrypt.compareSync(password, user.password);
-            if(!isPassValid){
-                return res.status(400).json({message:"Invalid password!"});
+            if (!isPassValid) {
+                return res.status(400).json({message: "Invalid password!"});
             }
-            const token = jwt.sign({userId:user._id}, config.get("secretKey"), {expiresIn: "1h"});
+            const token = jwt.sign({userId: user._id}, config.get("secretKey"), {expiresIn: "1h"});
             res.json({
-                token, userId: user._id, email:email});
+                token, userId: user._id, email: email, role: role
+            });
         } catch (e) {
             console.log(e);
             res.status(500).json({message: "Server error"});

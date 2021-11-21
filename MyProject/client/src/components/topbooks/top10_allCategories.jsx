@@ -6,7 +6,7 @@ export const Top10AllCategories = () => {
 
     return (
         <div className="container">
-            <div><h3><u>Top 10 books of all Categories</u></h3></div>
+            <div className="text-center"><h3><u>Top 10 books of all Categories</u></h3></div>
             <div>
                 <table className="table table-success table-striped table-hover">
                     <thead>

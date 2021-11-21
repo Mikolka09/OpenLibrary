@@ -5,7 +5,7 @@ export const Top10Category = () => {
 
     return (
         <div className="container mt-4">
-            <div><h3><u>Top 10 books on Category</u></h3></div>
+            <div className="text-center"><h3><u>Top 10 books on Category</u></h3></div>
             <div>
                 <select className="form-select" defaultValue={'DEFAULT'}>
                     <option value="DEFAULT" disabled>Select Category</option>

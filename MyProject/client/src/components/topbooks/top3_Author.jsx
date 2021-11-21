@@ -5,7 +5,7 @@ export const Top3Author = () => {
 
     return (
         <div className="container mt-4">
-            <div><h3><u>Top 3 books on Author</u></h3></div>
+            <div className="text-center"><h3><u>Top 3 books on Author</u></h3></div>
             <div>
                 <select className="form-select" defaultValue={'DEFAULT'}>
                     <option value="DEFAULT" disabled>Select Author</option>
