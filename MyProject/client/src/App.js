@@ -7,7 +7,7 @@ import {TopBooksContainer} from "./components/topbooks/topbooks_container";
 import {Error404} from "./components/error/error404";
 import {ContactContainer} from "./components/contact/contact_container";
 import {AuthContainer} from "./components/auth/auth_container";
-import {useRoutes} from "./auth_routes";
+import {useRoutes} from "./routes/auth_routes";
 import {useAuth} from "./hooks/auth.hook";
 import {AuthContext} from "./context/authContext";
 import 'materialize-css'

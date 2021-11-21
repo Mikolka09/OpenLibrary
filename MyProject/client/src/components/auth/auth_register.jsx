@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
 import "./css/auth_register.css";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {useHttp} from "../../hooks/http.hook";
 import {useMessage} from "../../hooks/message.hook";
 
 export const AuthRegister = () => {
     const message = useMessage();
+    const history = useHistory();
     const {loading, error, request, clearError} = useHttp();
     const [form, setForm] = useState({
         username: '', email: '', password: '', password_conf: ''
@@ -25,6 +26,7 @@ export const AuthRegister = () => {
             try {
                 const data = await request('/api/auth/register', "POST", {...form});
                 message(data.message);
+                history.push("/login");
             } catch (e) {
             }
         } else {

@@ -4,6 +4,7 @@ import {ListMyBooks} from "./list_mybooks";
 import ImgDash from "./img/2017-11-MyDashboard.svg";
 import "./css/dashboard_main.css";
 import {CreateMyBook} from "./create_mybook";
+import {ListUsers} from "./list_users";
 
 export const DashBoardMain = () => {
 
@@ -22,7 +23,7 @@ export const DashBoardMain = () => {
                     <CreateMyBook/>
                 </Route>
                 <Route path="/dashboard/userDetails">
-
+                    <ListUsers/>
                 </Route>
                 <Route path="/dashboard/userDelete">
 

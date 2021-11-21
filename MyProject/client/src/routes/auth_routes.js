@@ -1,6 +1,6 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
-import {DashboardContainer} from "./components/dashboard/dashboard_container";
+import {DashboardContainer} from "../components/dashboard/dashboard_container";
 
 
 export const useRoutes = isAuthenticated => {

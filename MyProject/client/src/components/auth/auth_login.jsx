@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import "./css/auth_register.css";
 import "./css/auth_login.css";
-import {Link, Redirect, useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {useMessage} from "../../hooks/message.hook";
 import {useHttp} from "../../hooks/http.hook";
 import {AuthContext} from "../../context/authContext";
