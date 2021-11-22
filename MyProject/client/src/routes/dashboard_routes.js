@@ -1,6 +1,6 @@
 import React from "react";
 import {Route, Switch} from "react-router-dom";
-import {ListUsers} from "../components/dashboard/list_users";
+import {ListUsers} from "../components/dashboard/allusers/list_users";
 
 
 export const dashboardRoutes = role => {
